@@ -20,8 +20,8 @@ public class CoreConfiguration implements WebMvcConfigurer {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors
-                        .any()).paths(PathSelectors.any())
+                .select()
+                .paths(PathSelectors. regex ( "^(?!/(error).*$).*$" ))
                 .build();
     }
 
